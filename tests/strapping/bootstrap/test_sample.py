@@ -3,7 +3,7 @@ from typing import Callable
 import pytest
 import numpy as np
 
-from src.strapping.bootstrap import sample, sample_diffs
+from strapping.bootstrap import sample, sample_diffs
 
 
 @pytest.mark.parametrize(

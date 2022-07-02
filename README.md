@@ -142,3 +142,21 @@ of a provided reference (control dataset).
 >>> stats.percentage_confidence_intervals(mu_sampled, X1.mean())
 (array([-0.36300107]), array([-0.26403278]), array([-0.16368146]))
 ```
+
+## Other
+### Compute Cohen's d
+Using `strapping` you can easily compute bootstrapped value of Cohen's d,
+which is often used for a metric of measuring the effect size.
+
+To do so first compute the difference between two datasets:
+```python
+diff_sampled = bootstrap.sample_diffs(X1, X2, iterations=1000, aggrfunc=np.mean)
+```
+
+Then, compute the pooled standard deviation using a helper function and finally compute Cohen's d value:
+```python
+from strapping.stats import pooled_std
+pstd = pooled_std(X1, X2)
+
+cohensd = diff_sampled / pstd
+```

@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from src.strapping.stats import confidence_intervals, percentage_confidence_intervals
+from strapping.stats import confidence_intervals, percentage_confidence_intervals
 
 
 @pytest.mark.parametrize(
