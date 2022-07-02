@@ -33,7 +33,7 @@ def sample_diffs(test_data: np.ndarray, control_data: np.ndarray,
     :param aggrfunc: an aggregation function applied to sampled data
     :returns: a vector containing sampled values
     """
-    assert test_data.shape == control_data.shape
+    assert test_data.shape[1] == control_data.shape[1]
 
     test_samples = sample(test_data, iterations, aggrfunc)
     control_samples = sample(control_data, iterations, aggrfunc)
